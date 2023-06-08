@@ -1,7 +1,7 @@
 # Личный проект «Кекстаграм»
 
 * Студент: [Данил Мальков](https://up.htmlacademy.ru/javascript/29/user/2327087).
-* Наставник: `Неизвестно`.
+* Наставник: [Александр Конотоп](https://htmlacademy.ru/profile/sineway).
 
 ---
 
