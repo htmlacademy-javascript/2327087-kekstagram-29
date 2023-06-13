@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 //Проверка длины строки
 function lengthString(string, maxLength) {
   if (string.length <= maxLength) {
@@ -8,8 +9,8 @@ function lengthString(string, maxLength) {
 }
 
 //Проверка является ли строка палиндромом
-function palindrom(string) {
-  srting = string.replaceAll('', ' ').toLowerCase();
+function isPalindrom(string) {
+  string = string.replaceAll('', ' ').toLowerCase();
   return string === string.split('').reverse().join('');
 }
 
