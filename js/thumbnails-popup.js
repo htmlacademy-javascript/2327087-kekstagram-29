@@ -5,8 +5,6 @@ const popup = document.querySelector('.big-picture');
 const commentTemplate = popup.querySelector('.social__comment');
 
 function renderPopup({url, description, likes, comments}) {
-  console.log({url, description, likes, comments});
-
   popup.querySelector('.big-picture__img img').src = url;
   popup.querySelector('.social__comments').replaceChildren(...comments.map(createComment));
   popup.querySelector('.likes-count').textContent = likes;
