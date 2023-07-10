@@ -1,4 +1,4 @@
-import {getArrPhotos} from './data.js';
-import { renderThumbnails } from './rendering-thumbnails.js';
+import getArrPhotos from './data.js';
+import initGallery from './gallery.js';
 
-renderThumbnails(getArrPhotos());
+initGallery(getArrPhotos());

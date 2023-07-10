@@ -32,19 +32,31 @@ const getLikes = getUnicRandomId(15, 200);
 
 const getCommentId = getUnicRandomId(1, 777777);
 
+/**
+ *
+ * @returns {PictureComment}
+ */
 const getComment = () => ({
-  id: getCommentId,
+  id: getCommentId(),
   avatar: `img/avatar-${getRandomInteger(1, 6)}.svg`,
   message: message[getRandomInteger(0, message.length - 1)],
   name: names[getRandomInteger(0, names.length - 1)]
 });
 
+/**
+ *
+ * @returns {Array<PictureComment>}
+ */
 const getCommentUsers = () => {
   let commentArr = [];
   commentArr = Array.from({length: getRandomInteger(0, 30)}, getComment);
   return commentArr;
 };
 
+/**
+ *
+ * @returns {Picture}
+ */
 const getPhotoObj = () => ({
   id: getPhotoId(),
   url: `photos/${getPhotoUrl()}.jpg`,
@@ -53,10 +65,14 @@ const getPhotoObj = () => ({
   comments: getCommentUsers()
 });
 
+/**
+ *
+ * @returns {Array<Picture>}
+ */
 const getArrPhotos = (length = 25) => {
   let objPhotos = [];
   objPhotos = Array.from({length}, getPhotoObj);
   return objPhotos;
 };
 
-export {getArrPhotos};
+export default getArrPhotos;
