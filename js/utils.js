@@ -1,3 +1,9 @@
+/**
+ *
+ * @param {number} min
+ * @param {number} max
+ * @returns {number}
+ */
 const getRandomInteger = (min, max) => {
   const lower = Math.ceil(Math.min(min, max));
   const upper = Math.floor(Math.max(min, max));
@@ -5,6 +11,12 @@ const getRandomInteger = (min, max) => {
   return Math.floor(result);
 };
 
+/**
+ *
+ * @param {number} min
+ * @param {number} max
+ * @returns
+ */
 const getUnicRandomId = (min, max) => {
   const postValues = [];
   return () => {
