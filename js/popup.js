@@ -17,6 +17,8 @@ function showPopup(popup) {
  */
 function hidePopup(popup) {
   popup.classList.add('hidden');
+  popup.removeEventListener('click', onPopupClick);
+  popup.dispatchEvent(new Event('hide'));
 
   document.body.classList.remove('modal-open');
   document.removeEventListener('click', onDocumentKeydown);
@@ -25,20 +27,23 @@ function hidePopup(popup) {
 /**
  *Обработчик. evt - объект, который описывает событие.
  *target - ссылка на объект, которым было инициированно событие.
- * @param {MouseEvent & {target: Element, currentTarget: Element}} evt
+ * @param {MouseEvent & {target: Element, currentTarget: Element}} event
  */
-function onPopupClick(evt) {
-  if (evt.target.closest('.cancel')) {
-    hidePopup(evt.currentTarget);
+function onPopupClick(event) {
+  if (event.target.closest('.cancel')) {
+    hidePopup(event.currentTarget);
   }
 }
 
 /**
  *
- * @param {KeyboardEvent} evt
+ * @param {KeyboardEvent & {target: Element}} event
  */
-function onDocumentKeydown(evt) {
-  if (evt.key.startsWith('Esc')) {
+function onDocumentKeydown(event) {
+  const isEscapeKey = event.key.startsWith('Esc');
+  const isTextField = event.target.matches('input[type = "text"], textarea');
+
+  if (isEscapeKey && !isTextField) {
     hidePopup(document.querySelector('.overlay:not(.hidden)'));
   }
 }
