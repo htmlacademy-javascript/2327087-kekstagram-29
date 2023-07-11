@@ -22,3 +22,4 @@ function onFormChange(event) {
 function onFormHide() {
   form.reset();
 }
+ 
