@@ -7,6 +7,8 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
   <title>Кекстаграм</title>
+  <script src="vendor/pristine/pristine.min.js" defer></script>
+  <script src="js/main.js" type="module"></script>
 </head>
 
 <body>
@@ -116,10 +118,23 @@
                 <!-- Добавление хэш-тегов и комментария к изображению -->
                 <fieldset class="img-upload__text text">
                   <div class="img-upload__field-wrapper">
-                    <input class="text__hashtags" type="text" name="hashtags" placeholder="#ХэшТег">
+                    <input
+                      class="text__hashtags"
+                      type="text"
+                      name="hashtags"
+                      placeholder="#ХэшТег"
+                      data-pristine-word-pattern="#[a-zа-яё0-9]+"
+                      data-pristine-word-pattern-message="Сначала #, затем буквы/числа"
+                    >
                   </div>
                   <div class="img-upload__field-wrapper">
-                    <textarea class="text__description" name="description" placeholder="Ваш комментарий..."></textarea>
+                    <textarea
+                      class="text__description"
+                      name="description"
+                      placeholder="Ваш комментарий..."
+                      data-pristine-maxlength="140"
+                      data-pristine-maxlength-message="Не более ${1} символов"
+                    ></textarea>
                   </div>
                 </fieldset>
 
@@ -226,6 +241,5 @@
       </div>
     </section>
   </template>
-  <script src="js/main.js" type="module"></script>
 </body>
 </html>
