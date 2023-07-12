@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="css/pristine.css">
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/style.css">
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
@@ -119,12 +120,18 @@
                 <fieldset class="img-upload__text text">
                   <div class="img-upload__field-wrapper">
                     <input
-                      class="text__hashtags"
                       type="text"
+                      class="text__hashtags"
                       name="hashtags"
                       placeholder="#ХэшТег"
                       data-pristine-word-pattern="#[a-zа-яё0-9]+"
-                      data-pristine-word-pattern-message="Сначала #, затем буквы/числа"
+                      data-pristine-word-pattern-message="Сначала решётка (#) затем буквы/числа"
+                      data-pristine-unique-words
+                      data-pristine-unique-words-message="Хэш-теги не должны повторяться"
+                      data-pristine-max-words="5"
+                      data-pristine-max-words-message="Не более ${1} хэш-тегов"
+                      data-pristine-word-maxlength="20"
+                      data-pristine-word-maxlength-message="Не более ${1} символов на хэш-тег"
                     >
                   </div>
                   <div class="img-upload__field-wrapper">
