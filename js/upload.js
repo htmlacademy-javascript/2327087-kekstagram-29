@@ -28,6 +28,8 @@ function onFormChange(event) {
   }
 }
 
+renderPopup();
+
 function onFormHide() {
   form.reset();
 }
