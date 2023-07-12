@@ -6,6 +6,7 @@ const popup = document.querySelector('.img-upload__overlay');
 const preview = popup.querySelector('img');
 const scaleControl = initScaleControl(popup.querySelector('.scale'));
 const effectSlider = initEffectSlider(popup.querySelector('.effect-level'));
+const effectPicker = popup.querySelector('.effects');
 
 /**
  * @param {File} data
@@ -20,6 +21,8 @@ function renderPopup(data) {
   effectSlider.on('update', onEffectSliderUpdate);
   effectSlider.setEffect('none');
 
+  effectPicker.addEventListener('change', onEffectPickerChange);
+
   showPopup(popup);
 }
 
@@ -32,6 +35,10 @@ function onScaleControlUpdate() {
 
 function onEffectSliderUpdate() {
   preview.style.setProperty('filter', effectSlider.getCssValue());
+}
+
+function onEffectPickerChange(event) {
+  effectSlider.setEffect(event.target.getAttribute('value'));
 }
 
 export default renderPopup;
