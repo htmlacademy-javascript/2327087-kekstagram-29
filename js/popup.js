@@ -36,7 +36,6 @@ function onPopupClick(event) {
 }
 
 /**
- *
  * @param {KeyboardEvent & {target: Element}} event
  */
 function onDocumentKeydown(event) {
