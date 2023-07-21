@@ -1,5 +1,4 @@
 /**
- *
  * @param {Element} popup
  */
 function showPopup(popup) {
@@ -12,7 +11,6 @@ function showPopup(popup) {
 }
 
 /**
- *
  * @param {Element} popup
  */
 function hidePopup(popup) {
@@ -36,7 +34,6 @@ function onPopupClick(event) {
 }
 
 /**
- *
  * @param {KeyboardEvent & {target: Element}} event
  */
 function onDocumentKeydown(event) {
