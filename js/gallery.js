@@ -1,5 +1,6 @@
 import renderPopup from './gallery-popup.js';
 
+const menu = document.querySelector('.img-filters');
 const gallery = document.querySelector('.pictures');
 
 /**
@@ -11,7 +12,25 @@ const thumbnailTemplate = document.querySelector('#picture');
  * @param {Array<Picture>} data
  */
 function initGallery(data) {
+  // TODO: Сортировка
+  menu.classList.remove('img-filters--inactive');
+  menu.addEventListener('click', onMenuClick);
+
   renderThumbnails(data);
+}
+
+/**
+ * @param {MouseEvent & {target: Element}} event
+ */
+function onMenuClick(event) {
+  const selectedButton = event.target.closest('button');
+
+  if (selectedButton) {
+    menu.querySelectorAll('button').forEach((it) => {
+      it.classList.toggle('img-filters__button--active', it === selectedButton);
+    });
+    selectedButton.dispatchEvent(new Event('toggle'));
+  }
 }
 
 /**
