@@ -19,7 +19,7 @@ function hidePopup(popup) {
   popup.dispatchEvent(new Event('hide'));
 
   document.body.classList.remove('modal-open');
-  document.removeEventListener('click', onDocumentKeydown);
+  document.removeEventListener('keydown', onDocumentKeydown);
 }
 
 /**
