@@ -50,7 +50,7 @@ function onStatusClick(event) {
  */
 function onDocumentKeydown(event) {
   if (event.key.startsWith('Esc')) {
-    hideStatus(document.querySelector('.succses, .error'));
+    hideStatus(document.querySelector('.success, .error'));
     event.stopPropagation();
   }
 }
